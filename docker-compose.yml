@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  app:
+    build: ./app
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle install && bin/dev"
+    environment:
+      RUBY_DEBUG_OPEN: true
+    volumes:
+      - ./app:/app
+      - app_bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+volumes:
+  mysql:
+  app_bundle:

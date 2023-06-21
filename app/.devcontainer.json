@@ -1,0 +1,14 @@
+{
+    "name": "container app",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "app", // docker-compse.ymlで記載されている起動対象のサービス名
+    "workspaceFolder": "/app", // 起動時に接続するディレクトリ
+    "shutdownAction": "none", // 終了時にコンテナを削除しない
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "KoichiSasada.vscode-rdbg"
+            ]
+        }
+    }
+}
